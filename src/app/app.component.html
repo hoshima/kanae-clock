@@ -1,26 +1,41 @@
 <div [style.background-color]="background.value === '1' ? '#00ff00' : 'inherit'">
   <div fxLayout="column" layout-align="space-around center">
 
-    <div fxFlex="90vh" fxLayoutAlign="center center">
-      {{ date$ | date: 'yyyy/MM/dd HH:mm:ss' }}
+    <div fxFlex="60vh" fxLayoutAlign="center center">
+      <span [style.font-size]="fontSize.value" [style.color]="fontColor.value">
+        {{ date$ | date: 'yyyy/MM/dd HH:mm:ss' }}
+      </span>
     </div>
-
     <br>
 
     <div fxLayoutAlign="center center">
       <mat-form-field>
+        <mat-label>文字サイズ</mat-label>
+        <mat-select #fontSize value="60px">
+          <mat-option value="20px">小</mat-option>
+          <mat-option value="40px">中</mat-option>
+          <mat-option value="60px">大</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field>
+        <mat-label>文字色</mat-label>
+        <input matInput #fontColor [value]="color" [style.background]="color" [(colorPicker)]="color" />
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field>
         <mat-label>背景色</mat-label>
-        <mat-select #background>
+        <mat-select #background value="0">
           <mat-option value="0">
-            ふつう
+            白
           </mat-option>
           <mat-option value="1">
             グリーンバック
           </mat-option>
         </mat-select>
       </mat-form-field>
-
     </div>
   </div>
-
 </div>

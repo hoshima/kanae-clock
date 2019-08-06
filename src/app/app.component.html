@@ -2,13 +2,26 @@
   <div fxLayout="column" layout-align="space-around center">
 
     <div fxFlex="60vh" fxLayoutAlign="center center">
-      <span [style.font-size]="fontSize.value" [style.color]="fontColor.value">
+      <span [style.font-size]="fontSize.value" [style.color]="fontColor.value" [style.font-family]="font.value">
         {{ date$ | date: 'yyyy/MM/dd EEE HH:mm:ss' }}
       </span>
     </div>
     <br>
 
     <div fxLayoutAlign="center center">
+      <mat-form-field>
+        <mat-label>フォント</mat-label>
+        <mat-select #font value="Roboto">
+          <mat-option value="Roboto">Roboto</mat-option>
+          <mat-option value="Blinker">Blinker</mat-option>
+          <mat-option value="Libre Caslon Text">Libre Caslon Text</mat-option>
+          <mat-option value="Lacquer">Lacquer</mat-option>
+          <mat-option value="Teko">Teko</mat-option>
+          <mat-option value="Amatic SC">Amatic SC</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;
+
       <mat-form-field>
         <mat-label>文字サイズ</mat-label>
         <mat-select #fontSize value="60px">

@@ -1,1 +1,26 @@
-{{ date$ | date: 'yyyy/MM/dd HH:mm:ss' }}
+<div [style.background-color]="background.value === '1' ? '#00ff00' : 'inherit'">
+  <div fxLayout="column" layout-align="space-around center">
+
+    <div fxFlex="90vh" fxLayoutAlign="center center">
+      {{ date$ | date: 'yyyy/MM/dd HH:mm:ss' }}
+    </div>
+
+    <br>
+
+    <div fxLayoutAlign="center center">
+      <mat-form-field>
+        <mat-label>背景色</mat-label>
+        <mat-select #background>
+          <mat-option value="0">
+            ふつう
+          </mat-option>
+          <mat-option value="1">
+            グリーンバック
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+
+</div>

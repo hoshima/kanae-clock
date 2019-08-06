@@ -2,7 +2,7 @@
   <div fxLayout="column" layout-align="space-around center">
 
     <div fxFlex="60vh" fxLayoutAlign="center center">
-      <span [style.font-size]="fontSize.value" [style.color]="fontColor.value" [style.font-family]="font.value">
+      <span style="font-size: 60px;" [style.color]="fontColor.value" [style.font-family]="font.value">
         {{ date$ | date: 'yyyy/MM/dd EEE HH:mm' }}
       </span>
     </div>
@@ -18,16 +18,6 @@
           <mat-option value="Lacquer">Lacquer</mat-option>
           <mat-option value="Teko">Teko</mat-option>
           <mat-option value="Amatic SC">Amatic SC</mat-option>
-        </mat-select>
-      </mat-form-field>
-      &nbsp;
-
-      <mat-form-field>
-        <mat-label>文字サイズ</mat-label>
-        <mat-select #fontSize value="60px">
-          <mat-option value="20px">小</mat-option>
-          <mat-option value="40px">中</mat-option>
-          <mat-option value="60px">大</mat-option>
         </mat-select>
       </mat-form-field>
       &nbsp;

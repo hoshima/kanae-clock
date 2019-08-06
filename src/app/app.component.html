@@ -1,14 +1,8 @@
-<div [style.background-color]="background.value === '1' ? '#00ff00' : 'inherit'">
-  <div fxLayout="column" layout-align="space-around center">
+<div style="height: 100vh" [style.background-color]="background.value === '1' ? '#00ff00' : 'inherit'">
+  <div fxLayout="column" fxLayoutAlign="end center">
 
-    <div fxFlex="60vh" fxLayoutAlign="center center">
-      <span style="font-size: 60px;" [style.color]="fontColor.value" [style.font-family]="font.value">
-        {{ date$ | date: 'yyyy/MM/dd EEE HH:mm' }}
-      </span>
-    </div>
     <br>
-
-    <div fxLayoutAlign="center center">
+    <div fxFlex="10">
       <mat-form-field>
         <mat-label>フォント</mat-label>
         <mat-select #font value="Roboto">
@@ -42,6 +36,12 @@
       &nbsp;
 
       <a href="https://github.com/hoshima/kanae-clock/" target="_blank">GitHub</a>
+    </div>
+
+    <div fxFlex>
+      <span style="font-size: 60px;" [style.color]="fontColor.value" [style.font-family]="font.value">
+        {{ date$ | date: 'yyyy/MM/dd EEE HH:mm' }}
+      </span>
     </div>
   </div>
 </div>
